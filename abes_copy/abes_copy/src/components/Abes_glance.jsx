@@ -16,6 +16,7 @@ const Abes_glance = () => {
           style={{
             display: "flex",
             flexDirection: "row",
+            justifyContent: "space-around",
           }}
         >
           <h1 style={{ width: "80%", color: "black", fontSize: "32px" }}>
