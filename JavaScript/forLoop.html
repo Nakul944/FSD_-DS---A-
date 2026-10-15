@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="car"></div>
+    <script>
+      const car = {
+        wheelCount: 4,
+        color: "blue",
+        model: "Audi",
+      };
+
+      for (let [key, value] of Object.entries(car)) {
+        document.write(key + " : " + value + "<br>");
+      }
+
+      let car_list = ["car1", "car2", "car3"];
+
+      for (let i = 0; i < car_list.length(); i++) {
+        document.getElementById("car").innerHTML += car_list[i] + "<br>";
+      }
+    </script>
+  </body>
+</html>

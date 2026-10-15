@@ -5,10 +5,17 @@ const Abes_body = () => {
     <div>
       <section
         style={{
-          margin: "10px",
+          // margin: "10px",
+          width: "100%",
         }}
       >
-        <video autoPlay loop muted aria-label="Background Video">
+        <video
+          autoPlay
+          loop
+          muted
+          aria-label="Background Video"
+          style={{ width: "100%" }}
+        >
           <source
             src="https://www.abes.ac.in/assets/HomePage/1%20Home%20Page%20Banner.webm"
             type="video/webm"

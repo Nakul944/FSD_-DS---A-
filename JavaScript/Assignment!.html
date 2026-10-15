@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0px;
+        width: 100dvw;
+        height: 100dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(144, 238, 144, 0.64);
+      }
+      .menu {
+        margin: 0px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .menu h1 {
+        margin: 0px;
+        font-size: 48px;
+        font-family: sans-serif;
+      }
+      .container {
+        width: 40dvw;
+        padding: 20px;
+        border-radius: 30px;
+        border: double 5px black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: lightpink;
+        flex-wrap: nowrap;
+      }
+      .container h1 {
+        font-family: monospace;
+      }
+      .product_name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        width: 70%;
+        border-radius: 10px;
+        background-color: rgba(165, 42, 42, 0.34);
+        margin: 10px;
+        transition: scale 0.2s ease-in-out;
+      }
+      .product_name:hover {
+        scale: 1.1;
+      }
+      #final_price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-family: monospace;
+      }
+    </style>
+    <title>Assignment 1</title>
+  </head>
+  <body>
+    <main>
+      <div class="menu"><h1>Menu Items :</h1></div>
+      <div class="container">
+        <button class="product_name" id="tea">
+          <h1>Tea : Rs. 45</h1>
+        </button>
+        <button class="product_name" id="coffee">
+          <h1>Coffee : Rs. 150</h1>
+        </button>
+        <button class="product_name" id="pulses">
+          <h1>Pulses : Rs. 100</h1>
+        </button>
+        <button class="product_name" id="sugar">
+          <h1>Sugar : Rs. 180</h1>
+        </button>
+      </div>
+      <div id="final_price"></div>
+    </main>
+    <script>
+      // 1. Defined menu object correctly
+      const menu = {
+        tea: 45,
+        coffee: 150,
+        pulses: 100,
+        sugar: 180,
+      };
+
+      // 2. Declared the function BEFORE using it, using standard syntax
+      function calc_final_price(key) {
+        // Used let/const instead of invalid 'int:' syntax
+        // Parsed the prompt text into a usable number
+        const amount = parseFloat(prompt(`Enter amount of ${key} in kg(s) : `));
+
+        // Validated if the user entered a real number
+        if (isNaN(amount) || amount <= 0) {
+          alert("Please enter a valid amount!");
+          return;
+        }
+
+        const value = menu[key];
+        const total = value * amount;
+
+        // Overwrite content with '=' instead of appending with '+=' to avoid stacking texts
+        document.getElementById("final_price").innerHTML =
+          `Final cost for ${key}: Rs. ${total}`;
+      }
+
+      // 3. Wrapped calls in arrow functions so they only trigger on click
+      // Passed keys as proper string literals matching your object keys
+      document.getElementById("tea").onclick = () => calc_final_price("tea");
+      document.getElementById("coffee").onclick = () =>
+        calc_final_price("coffee");
+      document.getElementById("pulses").onclick = () =>
+        calc_final_price("pulses");
+      document.getElementById("sugar").onclick = () =>
+        calc_final_price("sugar");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const evenNumbers = numbers.filter((num) => num % 2 == 0);
+        const squareNumbers = numbers.map((num) => num * num);
+        const sum=evenNumbers.reduce((i,s) => i+ s, 0);
+        console.log(numbers);
+        console.log(evenNumbers);
+        console.log(squareNumbers);
+        console.log(sum);
+        const student = {
+            name: "John",
+            age: 20,
+            grade: "A",
+            isPassed: true
+        }
+        const [name, age, grade, isPassed] = [student.name, student.age, student.grade, student.isPassed];
+        document.write(name + " " + age + " " + grade + " " + isPassed);
+        const chal=["kadam","kadam"];
+        const nikal=["badhaye","ja"];
+        const gaana=[...chal,...nikal];
+        console.log(gaana);
+    </script>
+</body>
+</html>
